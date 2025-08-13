@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inauguração Castor Colchões</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            overflow-x: hidden;
+            background: #8B0000;
+        }
+
+        /* Fundo partículas */
+        #particles-js {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: linear-gradient(to right, #7a0000, #b22222);
+        }
+
+        /* Hero */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            padding: 2rem 1rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .logo {
+            width: 280px;
+            margin-bottom: 2rem;
+            filter: drop-shadow(0 5px 10px rgba(0,0,0,0.4));
+        }
+
+        /* Card convite */
+        .invite-card {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+            padding: 2.5rem;
+            max-width: 600px;
+            color: #8B0000;
+            position: relative;
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        /* Faixa */
+        .ribbon {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 150px;
+            height: 150px;
+            overflow: hidden;
+        }
+
+        .ribbon span {
+            position: absolute;
+            display: block;
+            width: 225px;
+            padding: 15px 0;
+            background: linear-gradient(45deg, #FFD700, #d4af37);
+            box-shadow: 0 5px 15px rgba(0,0,0,.25);
+            color: #8B0000;
+            font-weight: bold;
+            text-align: center;
+            right: -25px;
+            top: 30px;
+            transform: rotate(45deg);
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+
+        /* Data */
+        .date-box {
+            background: linear-gradient(90deg, #8B0000, #a51a1a);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            margin: 1.5rem auto;
+            text-align: center;
+            animation: pulse 3s infinite ease-in-out;
+            box-shadow: 0 5px 15px rgba(139, 0, 0, 0.35);
+        }
+
+        /* Botão */
+        .btn-primary {
+            background: linear-gradient(90deg, #FFD700, #d4af37);
+            color: #8B0000;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 1.5rem;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 12px 28px rgba(255, 215, 0, 0.6);
+        }
+
+        /* Rodapé */
+        footer {
+            background: #7a0000;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+            font-size: 0.95rem;
+        }
+
+        /* Animações */
+        @keyframes fadeInUp {
+            from { transform: translateY(40px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.03); }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Fundo de partículas -->
+    <div id="particles-js"></div>
+
+    <div class="hero">
+        <img src="https://i.ibb.co/gbf4hF26/logo-castor.png" alt="Logo Castor Colchões" class="logo">
+
+        <div class="invite-card">
+            <div class="ribbon">
+                <span>Grande Inauguração</span>
+            </div>
+
+            <h1 class="text-3xl font-bold mb-4">Você está convidado!</h1>
+            <p class="mb-6">Temos o prazer de convidar você para a inauguração da nova loja Castor Colchões!</p>
+
+            <div class="date-box">
+                <p class="text-xl font-bold">22 de Agosto de 2025</p>
+                <p class="text-lg">10:00 da manhã</p>
+            </div>
+
+            <p class="mb-6">Venha conhecer nossos produtos exclusivos!</p>
+
+            <div>
+                <p class="font-bold mb-2">Localização:</p>
+                <p>Avenida Euvaldo Lodi, n°431</p>
+                <button class="btn-primary" id="knowMoreBtn">Saiba Mais</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Castor Colchões - Um sonho de colchão</p>
+        <p class="mt-2">Telefone: (34) 98411-9669 | Instagram: @castorfrutalmg</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        document.getElementById('knowMoreBtn').addEventListener('click', function() {
+            window.location.href = 'https://wa.me/+5534984119669';
+        });
+
+        // Configuração partículas mais elegantes
+        particlesJS("particles-js", {
+            "particles": {
+                "number": { "value": 40, "density": { "enable": true, "value_area": 900 } },
+                "color": { "value": "#FFD700" },
+                "shape": { "type": "circle" },
+                "opacity": { "value": 0.5, "random": true },
+                "size": { "value": 5, "random": true },
+                "line_linked": { "enable": false },
+                "move": { "enable": true, "speed": 0.6, "direction": "none", "random": true, "straight": false }
+            },
+            "interactivity": {
+                "events": {
+                    "onhover": { "enable": false },
+                    "onclick": { "enable": false }
+                }
+            },
+            "retina_detect": true
+        });
+    </script>
+</body>
+</html>
